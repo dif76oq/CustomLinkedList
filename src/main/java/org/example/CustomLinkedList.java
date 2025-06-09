@@ -14,22 +14,6 @@ public class CustomLinkedList<T> {
         size = 0;
     }
 
-    private static class Node<T> {
-
-        private Node<T> ptrNext;
-        private Node<T> ptrPrev;
-        private T value;
-
-
-        public Node(Node<T> ptrNext, Node<T> ptrPrev, T value) {
-            this.ptrNext = ptrNext;
-            this.ptrPrev = ptrPrev;
-            this.value = value;
-        }
-        public Node() {
-        }
-    }
-
     public int size() {
         return size;
     }
@@ -131,5 +115,21 @@ public class CustomLinkedList<T> {
         current.ptrPrev.ptrNext = current.ptrNext;
         current.ptrNext.ptrPrev = current.ptrPrev;
         size--;
+    }
+
+    private static class Node<T> {
+
+        private Node<T> ptrNext;
+        private Node<T> ptrPrev;
+        private T value;
+
+
+        public Node(Node<T> ptrNext, Node<T> ptrPrev, T value) {
+            this.ptrNext = ptrNext;
+            this.ptrPrev = ptrPrev;
+            this.value = value;
+        }
+        public Node() {
+        }
     }
 }
